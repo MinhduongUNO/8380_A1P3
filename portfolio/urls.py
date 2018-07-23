@@ -21,7 +21,7 @@ urlpatterns = [
     path('investment/<int:pk>/edit/', views.investment_edit, name='investment_edit'),
     path('investment/<int:pk>/delete/', views.investment_delete, name='investment_delete'),
     path('customer/<int:pk>/portfolio/', views.portfolio, name='portfolio'),
-    path(r'^customers_json/', views.CustomerList.as_view()),
+    url(r'^customers_json/', views.CustomerList.as_view()),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('password_change/',

@@ -37,11 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mathfilters',
     'portfolio',
     'crispy_forms',
+    'rest_framework',
+    'django.contrib.humanize',
 ]
 
 LOGIN_REDIRECT_URL = '/home'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,13 +83,18 @@ WSGI_APPLICATION = 'efs.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Minhduong$assignment1',
+        'USER': 'Minhduong',
+        'PASSWORD': 'Lovemylife243?',
+        'HOST': 'Minhduong.mysql.pythonanywhere-services.com',
     }
 }
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
